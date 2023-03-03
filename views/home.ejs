@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<style>
+    *{
+    padding: 0;
+    margin: 0;
+}
+header{
+    width: 100%;
+height: 200px;
+background-color: rgb(255, 217, 0);
+display: flex;
+flex-direction: column;
+justify-content: space-around;
+padding-left: 50px;
+}
+
+button{
+    width: 100px;
+    height: 30px;
+    color: white;
+}
+#downmatter{
+    width: 100%;
+    height: auto;
+/* padding: 10px; */
+padding: 20px;
+/* padding-left: 10px; */
+}
+.newart{
+    background-color: #0261fb;
+border: 0;
+border-radius: 10px;
+width: 200px;
+margin-bottom: 10px;
+/* margin-left: 50px; */
+}
+.readmore{
+background-color: #0261fb;
+border: 0;
+border-radius: 10px;
+}
+.edit{
+    background-color: #0261fb8b;
+    border: 0;
+    border-radius: 10px;
+}
+.delete{
+    background-color: #fb0202;
+border: 0;
+border-radius: 10px;
+}
+.item{
+    border: 1px grey solid;
+    padding: 30px;
+    width: 100%;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-bottom: 10px;
+}
+ .delete:hover{
+opacity: 55%;
+}
+.edit:hover{
+    opacity: 55%;
+    }
+    .readmore:hover{
+        opacity: 55%;
+        }
+        .newart:hover{
+            opacity: 55%;
+            }
+</style>
+
+<body>
+    <header>
+        <h1 style="size: 500px;" ;>Mediam</h1>
+        <h1 style="color: white;" ;>Discover Stories, Articles and Research Work from GLA Students</h1>
+    </header>
+    <div id="downmatter">
+        <a href="/add-new-article"> <button class="newart">Add New Articles</button></a>
+        <% for(var i=0;i < data.length; i++){ %>
+            <div class="item">
+                <h1 class="heading"><%= data[i].title %></h1>
+                <h6><%= data[i].date %></h6>
+                <p><%= data[i].discription %></p>
+                <div id="but3">
+                    <button class="readmore">Read More</button>
+                    <button class="edit">Edit</button>
+                    <button class="delete">Delete</button>
+                </div>
+            </div>
+        <% } %>
+    </div>
+
+</body>
+
+</html>
